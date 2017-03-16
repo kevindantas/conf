@@ -6,6 +6,7 @@ import Pattern from './media/images/pattern.png';
 import './App.css';
 
 import Box from './Box';
+import Buttons from './Buttons';
 
 css.global('html, body', { padding: 0 })
 css.global('h5, span', { color: Globals.colors.primary, margin: 0})
@@ -27,6 +28,7 @@ const head = css({
   margin: '30px',
   textTransform: 'uppercase',
   textAlign: 'left',
+  letterSpacing: 6,
 })
 
 const hr =css({
@@ -39,9 +41,18 @@ const logo = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  flexDirection: 'column',
 })
 
 const footer = css({
+  alignSelf: 'flex-end',
+  display: 'flex',
+  '@media(max-width: 720px)': {
+    alignSelf: 'auto',
+  }
+})
+
+const btns = css({
   alignSelf: 'flex-end',
   display: 'flex',
   '@media(max-width: 720px)': {
@@ -62,6 +73,7 @@ class App extends Component {
 
           <div className={logo}>
             <Logo/>
+            <Buttons className={btns} />
           </div>
 
           <div className={footer} >
