@@ -1,7 +1,11 @@
 const Globals = {
+  location: 'Brasil',
+  year: 2017,
+
   colors: {
     primary: '#61DAFB',
     darken: '#161616',
+    white: '#FFFFFF',
   },
 
   fonts: {},
