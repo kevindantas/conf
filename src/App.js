@@ -7,9 +7,9 @@ import './App.css';
 
 import Box from './Box';
 import Buttons from './Buttons';
+import Header from './components/Header';
 
-css.global('html, body', { padding: 0 })
-css.global('h5, span', { color: Globals.colors.primary, margin: 0})
+css.global('html, body', { padding: 0 });
 
 const cont = css({
   background: `#161616 url(${Pattern})`,
@@ -21,14 +21,6 @@ const cont = css({
   alignItems: 'center',
   flexDirection: 'column',
   justifyContent: 'space-between',
-})
-
-const head = css({
-  alignSelf: 'flex-start',
-  margin: '30px',
-  textTransform: 'uppercase',
-  textAlign: 'left',
-  letterSpacing: 6,
 })
 
 const hr =css({
@@ -64,31 +56,25 @@ class App extends Component {
   render() {
     return (
       <div className={cont}>
+        <Header />
 
-          <div className={head}>
-            <h1>REACT<span>CONF</span></h1>
-            <div className={hr}></div>
-            <h5>brasil 2017</h5>
-          </div>
+        <div className={logo}>
+          <Logo/>
+          <Buttons className={btns}/>
+        </div>
 
-          <div className={logo}>
-            <Logo/>
-            <Buttons className={btns} />
-          </div>
-
-          <div className={footer} >
-            <Box>
-              <h3>DATA</h3>
-              <h2>05.10.2017</h2>
-              <p>10:00am - 17:00pm</p>
-            </Box>
-            <Box>
-              <h3>LOCAL</h3>
-              <h2>São Paulo</h2>
-              <p>Expo Center</p>
-            </Box>
-          </div>
-
+        <div className={footer}>
+          <Box>
+            <h3>DATA</h3>
+            <h2>05.10.2017</h2>
+            <p>10:00am - 17:00pm</p>
+          </Box>
+          <Box>
+            <h3>LOCAL</h3>
+            <h2>São Paulo</h2>
+            <p>Expo Center</p>
+          </Box>
+        </div>
       </div>
     );
   }
