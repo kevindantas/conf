@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { css } from 'glamor';
-import Globals from './utils/Globals';
+import Globals from '../utils/Globals';
 
 const cont = css({
   borderTop: `3px solid ${Globals.colors.primary}`,

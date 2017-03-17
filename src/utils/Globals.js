@@ -1,6 +1,13 @@
 const Globals = {
-  location: 'Brasil',
-  year: 2017,
+  location: {
+    country: 'Brasil',
+    city: 'São Paulo',
+    locale: 'SENAI - Santa cecília ',
+  },
+  date: {
+    year: 2017,
+    full: '05.10.2017'
+  },
 
   colors: {
     primary: '#61DAFB',

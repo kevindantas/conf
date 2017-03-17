@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 
 export default class Logo extends Component {
 
-  componentDidMount = () => {
-    this.changeIcon();
-  };
-
   changeIcon = () => {
     let icons = document.querySelectorAll('g.icon');
     let index = 0;
@@ -18,7 +14,11 @@ export default class Logo extends Component {
 
       const nextIcon = icons[index];
       nextIcon.setAttribute('class', 'icon active');
-    }, 500);
+    }, 1000);
+  };
+
+  componentDidMount() {
+    // this.changeIcon();
   };
 
   render() {
@@ -28,7 +28,7 @@ export default class Logo extends Component {
            x="0px" y="0px"
            width="320px" height="320px" viewBox="191.779 230.474 149.333 134.667"
       >
-        <g id="react1" className="icon">
+        <g id="react1" className="icon active">
           <path fill="#282828" d="M267.159,274.317c18.646,0,36.107,2.806,49.142,7.92c11.226,4.428,17.96,10.165,17.96,15.341
           		s-6.734,10.976-17.96,15.341c-13.033,5.114-30.495,7.921-49.142,7.921s-36.107-2.807-49.142-7.921
           		c-11.225-4.428-17.96-10.165-17.96-15.341s6.735-10.976,17.96-15.341C231.052,277.185,248.513,274.317,267.159,274.317
@@ -165,7 +165,7 @@ export default class Logo extends Component {
           		c2.183-3.741,6.174-6.049,10.539-6.049s8.356,2.308,10.539,6.049c2.183,3.742,2.183,8.42,0,12.161
           		c-2.183,3.742-6.174,6.049-10.539,6.049s-8.356-2.307-10.539-6.049C254.438,299.948,254.438,295.333,256.62,291.591z"/>
         </g>
-        <g id="react5" className="icon active">
+        <g id="react5" className="icon">
           <path fill="#00D8FF" d="M267.159,274.317c18.646,0,36.107,2.806,49.142,7.92c11.226,4.428,17.96,10.165,17.96,15.341
           		s-6.734,10.976-17.96,15.341c-13.033,5.114-30.495,7.921-49.142,7.921s-36.107-2.807-49.142-7.921
           		c-11.225-4.428-17.96-10.165-17.96-15.341s6.735-10.976,17.96-15.341C231.052,277.185,248.513,274.317,267.159,274.317

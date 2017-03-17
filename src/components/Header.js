@@ -45,7 +45,7 @@ const Title = () => (
       <hr {...styles.hr} />
     </div>
 
-    <h5 {...styles.subtitle}>{Globals.location} {Globals.year}</h5>
+    <h5 {...styles.subtitle}>{Globals.location.country} {Globals.date.year}</h5>
   </div>
 );
 

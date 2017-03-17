@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import { css } from 'glamor';
+
 import Button from './Button';
-import Pattern1 from './media/images/btn1Pattern.png';
-import Pattern2 from './media/images/btn1Pattern.png';
+import Pattern1 from '../media/images/btn1Pattern.png';
+import Pattern2 from '../media/images/btn1Pattern.png';
 
 const cont = css({
   textAlign: 'center',

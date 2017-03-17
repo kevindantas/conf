@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { css, style } from 'glamor';
-import Globals from './utils/Globals';
+
+import Globals from '../utils/Globals';
 
 const cont = css({
   textAlign: 'center',

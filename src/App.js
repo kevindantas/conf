@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { css } from 'glamor';
-import Logo from './Logo';
 import Globals from './utils/Globals';
 import Pattern from './media/images/pattern.png';
 import './App.css';
 
-import Box from './Box';
-import Buttons from './Buttons';
+import Logo from './components/Logo';
+import Box from './components/Box';
+import Buttons from './components/Buttons';
 import Header from './components/Header';
 
 css.global('html, body', { padding: 0 });
@@ -23,11 +23,11 @@ const cont = css({
   justifyContent: 'space-between',
 })
 
-const hr =css({
-  borderTop: `3px solid ${Globals.colors.primary}`,
-  width: 25,
-  height: 1,
-})
+// const hr =css({
+//   borderTop: `3px solid ${Globals.colors.primary}`,
+//   width: 25,
+//   height: 1,
+// })
 
 const logo = css({
   display: 'flex',
@@ -52,7 +52,7 @@ const btns = css({
   }
 })
 
-class App extends Component {
+class App extends PureComponent {
   render() {
     return (
       <div className={cont}>
@@ -66,13 +66,13 @@ class App extends Component {
         <div className={footer}>
           <Box>
             <h3>DATA</h3>
-            <h2>05.10.2017</h2>
+            <h2>{Globals.date.full}</h2>
             <p>10:00am - 17:00pm</p>
           </Box>
           <Box>
             <h3>LOCAL</h3>
-            <h2>São Paulo</h2>
-            <p>Expo Center</p>
+            <h2>{Globals.location.city}</h2>
+            <p>{Globals.location.locale}</p>
           </Box>
         </div>
       </div>
