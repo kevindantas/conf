@@ -233,6 +233,15 @@ export default class extends Component {
           		c-4.304,4.304-11.288,4.304-15.591,0C255.062,301.133,255.062,294.148,259.365,289.844z"/>
           </g>
         </svg>
+        <style jsx>{`
+          #react1, #react2, #react3, #react4, #react6, #react5 {
+            opacity: 0;
+          }
+
+          #react1.active, #react2.active, #react3.active, #react4.active, #react6.active, #react5.active {
+            opacity: 1;
+          }
+        `}</style>
       </div>
     );
   }
