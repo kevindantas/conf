@@ -10,7 +10,7 @@ export default class extends Component {
       let currentIcon = icons[index];
       currentIcon.setAttribute('class', 'icon');
 
-      index = icons[index + 1] ? index++ : 0;
+      index = icons[index + 1] ? index + 1 : 0;
 
       const nextIcon = icons[index];
       nextIcon.setAttribute('class', 'icon active');
