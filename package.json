@@ -8,7 +8,8 @@
   "dependencies": {
     "glamor": "^2.20.24",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-svg-morph": "^0.1.10"
   },
   "scripts": {
     "start": "react-scripts start",
