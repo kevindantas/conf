@@ -1,6 +1,6 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 
-import Globals from '../Globals';
+import Globals from '../utils/Globals';
 
 export default class extends PureComponent {
   render() {
@@ -16,23 +16,22 @@ export default class extends PureComponent {
         </div>
 
         <h5 className='subtitle'>
-          {Globals.location.country}
-          {Globals.date.year}
+          {Globals.location.country} {Globals.date.year}
         </h5>
 
         <style jsx>{`
           .header {
             align-self: flex-start;
             justify-content: flex-start;
-            margin: 30;
+            margin: 30px;
             text-align: left;
           }
 
           .title {
             color: ${Globals.colors.white};
-            margin: 0;
+            margin: 0px;
             text-transform: uppercase;
-            letter-spacing: 4;
+            letter-spacing: 4px;
             font-weight: bold;
           }
 
@@ -41,7 +40,7 @@ export default class extends PureComponent {
           }
 
           .hrContainer {
-            width: 25;
+            width: 25px;
           }
 
           .hr {
@@ -51,8 +50,8 @@ export default class extends PureComponent {
           .subtitle {
             color: ${Globals.colors.primary};
             text-transform: uppercase;
-            font-size: 17;
-            margin: 0;
+            font-size: 17px;
+            margin: 0px;
           }
         `}</style>
       </div>
