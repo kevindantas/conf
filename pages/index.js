@@ -50,7 +50,7 @@ export default class extends Component {
           }
 
           .footer {
-            alignSelf: flex-end;
+            align-self: flex-end;
             display: flex;
             @media(max-width: 720px) {
               align-self: auto;
@@ -63,14 +63,6 @@ export default class extends Component {
             @media(max-width: 720px) {
               align-self: auto;
             }
-          }
-
-          #react1, #react2, #react3, #react4, #react6, #react5 {
-            opacity: 0;
-          }
-
-          #react1.active, #react2.active, #react3.active, #react4.active, #react6.active, #react5.active {
-            opacity: 1;
           }
         `}</style>
       </div>
