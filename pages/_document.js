@@ -33,14 +33,13 @@ export default class extends Document {
           <meta name="msapplication-TileImage" content="/static/favicon.ico/ms-icon-144x144.png"/>
           <meta name="theme-color" content="#ffffff"/>
           <link href="https://fonts.googleapis.com/css?family=Rajdhani:400,700" rel="stylesheet"/>
-          <title>React Conf 2017 - Brasil</title>
+          <title>React Conf 2017 - Brazil</title>
           <style>{`
             body {
-              margin: 0;
-              padding: 0;
+              margin: 0px;
+              padding: 0px;
               font-family: Rajdhani, sans-serif;
-              background: #161616;
-              padding: 0;
+              background-color: #161616;
             }
           `}</style>
         </Head>
