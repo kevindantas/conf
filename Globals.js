@@ -1,4 +1,4 @@
-const Globals = {
+export default {
   location: {
     country: 'Brasil',
     city: 'São Paulo',
@@ -21,5 +21,3 @@ const Globals = {
     primary: 'all 100ms linear'
   },
 };
-
-export default Globals;
