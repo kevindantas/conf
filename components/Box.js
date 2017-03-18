@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+
 import Globals from '../Globals';
 
 export default class extends PureComponent {
@@ -11,24 +12,24 @@ export default class extends PureComponent {
 
         <style jsx>{`
           .cont {
-            borderTop: 3px solid ${Globals.colors.primary};
-            textAlign: left;
+            border-top: 3px solid ${Globals.colors.primary};
+            text-align: left;
             margin: 30px;
-            textTransform: uppercase;
-            > h3, p: {
-              color: Globals.colors.primary;
+            text-transform: uppercase;
+            > h3, p {
+              color: ${Globals.colors.primary};
               margin: 0;
-              letterSpacing: 2;
-            };
-            > p: {
-              color: Globals.colors.primary;
-              letterSpacing: 2;
-            };
-            > h2: {
+              letter-spacing: 2;
+            }
+            > p {
+              color: ${Globals.colors.primary};
+              letter-spacing: 2;
+            }
+            > h2 {
               margin: 0;
-              letterSpacing: 6;
-            };
-            @media(max-width: 720px): {
+              letter-spacing: 6;
+            }
+            @media(max-width: 720px) {
               margin: 5px;
             }
           }
