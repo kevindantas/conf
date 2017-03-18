@@ -1,80 +1,45 @@
 import React, { PureComponent } from 'react';
 import { css } from 'glamor';
+
 import Globals from './utils/Globals';
-import Pattern from './media/images/pattern.png';
-import './App.css';
 
-import Logo from './components/Logo';
-import Box from './components/Box';
-import Buttons from './components/Buttons';
+import Body from './components/Body';
+
 import Header from './components/Header';
+import Footer from './components/Footer';
 
-css.global('html, body', { padding: 0 });
+import BackgroundPattern from './media/images/backgroundPattern.png';
 
-const cont = css({
-  background: `#161616 url(${Pattern})`,
-  color: 'white',
-  height: '100vh',
-  width: '100%',
-  minWidth: '100vw',
-  display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-})
+css.global('html, body', {
+  padding: 0,
+  margin: 0,
+  fontFamily: 'Rajdhani, sans-serif',
+  background: Globals.colors.background,
+});
 
-// const hr =css({
-//   borderTop: `3px solid ${Globals.colors.primary}`,
-//   width: 25,
-//   height: 1,
-// })
-
-const logo = css({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  flexDirection: 'column',
-})
-
-const footer = css({
-  alignSelf: 'flex-end',
-  display: 'flex',
-  '@media(max-width: 720px)': {
-    alignSelf: 'auto',
-  }
-})
-
-const btns = css({
-  alignSelf: 'flex-end',
-  display: 'flex',
-  '@media(max-width: 720px)': {
-    alignSelf: 'auto',
-  }
-})
+const styles = {
+  container: css({
+    background: `#161616 url(${BackgroundPattern})`,
+    color: 'white',
+    height: '100vh',
+    width: '100%',
+    minWidth: '100vw',
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  }),
+};
 
 class App extends PureComponent {
   render() {
     return (
-      <div className={cont}>
+      <div {...styles.container}>
         <Header />
 
-        <div className={logo}>
-          <Logo/>
-          <Buttons className={btns}/>
-        </div>
+        <Body />
 
-        <div className={footer}>
-          <Box>
-            <h3>DATA</h3>
-            <h2>{Globals.date.full}</h2>
-            <p>10:00am - 17:00pm</p>
-          </Box>
-          <Box>
-            <h3>LOCAL</h3>
-            <h2>{Globals.location.city}</h2>
-            <p>{Globals.location.locale}</p>
-          </Box>
-        </div>
+        <Footer />
       </div>
     );
   }

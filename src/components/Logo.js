@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
+import { css } from 'glamor';
 
-export default class Logo extends Component {
+// TODO: refactor these to use inline-styles
+css.global('#react1, #react2, #react3, #react4, #react6, #react5', {
+  opacity: 0,
+});
 
+css.global('#react1.active, #react2.active, #react3.active, #react4.active, #react6.active, #react5.active', {
+  opacity: 1,
+  transition: 'opacity 1s ease-in',
+});
+
+
+class Logo extends Component {
   changeIcon = () => {
     let icons = document.querySelectorAll('g.icon');
     let index = 0;
@@ -18,7 +29,7 @@ export default class Logo extends Component {
   };
 
   componentDidMount() {
-    // this.changeIcon();
+    this.changeIcon();
   };
 
   render() {
@@ -243,3 +254,5 @@ export default class Logo extends Component {
     );
   }
 }
+
+export default Logo;
