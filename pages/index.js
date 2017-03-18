@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
 //import Router from 'next/router'
 
-// import Box from '../components/Box';
+import Box from '../components/Box';
 import Buttons from '../components/Buttons';
 import Header from '../components/Header';
 import Logo from '../components/Logo';
+
+import Globals from '../Globals';
 
 export default class extends Component {
   render() {
@@ -17,18 +19,18 @@ export default class extends Component {
           <Buttons className='btns' />
         </div>
 
-        {/*<div className='footer'>*/}
-        {/*<Box>*/}
-        {/*<h3>DATA</h3>*/}
-        {/*<h2>{Globals.date.full}</h2>*/}
-        {/*<p>10:00am - 17:00pm</p>*/}
-        {/*</Box>*/}
-        {/*<Box>*/}
-        {/*<h3>LOCAL</h3>*/}
-        {/*<h2>{Globals.location.city}</h2>*/}
-        {/*<p>{Globals.location.locale}</p>*/}
-        {/*</Box>*/}
-        {/*</div>*/}
+        <div className='footer'>
+          <Box>
+          <h3>DATA</h3>
+          <h2>{Globals.date.full}</h2>
+          <p>10:00am - 17:00pm</p>
+          </Box>
+          <Box>
+          <h3>LOCAL</h3>
+          <h2>{Globals.location.city}</h2>
+          <p>{Globals.location.locale}</p>
+          </Box>
+        </div>
         <style jsx>{`
           .cont {
             background: #161616 url(/static/media/images/pattern.png);
