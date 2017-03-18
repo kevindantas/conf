@@ -1,19 +1,23 @@
 {
   "name": "reactconf",
   "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "react-scripts": "0.9.4"
-  },
   "dependencies": {
-    "glamor": "^2.20.24",
+    "next": "^2.0.0-beta",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "standard": "^9.0.2"
+  },
+  "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "next build",
+    "dev": "next",
+    "lint": "standard",
+    "start": "NODE_ENV=production next start"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }
