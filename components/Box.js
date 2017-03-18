@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import Globals from '../Globals';
+import Globals from '../utils/Globals';
 
 export default class extends PureComponent {
   render() {
@@ -16,19 +16,6 @@ export default class extends PureComponent {
             text-align: left;
             margin: 30px;
             text-transform: uppercase;
-            > h3, p {
-              color: ${Globals.colors.primary};
-              margin: 0;
-              letter-spacing: 2;
-            }
-            > p {
-              color: ${Globals.colors.primary};
-              letter-spacing: 2;
-            }
-            > h2 {
-              margin: 0;
-              letter-spacing: 6;
-            }
             @media(max-width: 720px) {
               margin: 5px;
             }
