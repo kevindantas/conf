@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Snapshot Testing Box Snapshot Testing 1`] = `
+<div
+  className="cont"
+  data-jsx={3134665551}
+/>
+`;

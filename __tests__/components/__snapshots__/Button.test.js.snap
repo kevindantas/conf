@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Snapshot Testing Button Snapshot Testing 1`] = `
+<div
+  className="background"
+  data-jsx={2406450419}
+>
+  <div
+    className="cont"
+    data-jsx={2406450419}
+  >
+    <h2
+      data-jsx={2406450419}
+    />
+  </div>
+</div>
+`;

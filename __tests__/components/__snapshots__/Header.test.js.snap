@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Snapshot Testing Header Snapshot Testing 1`] = `
+<div
+  className="header"
+  data-jsx={233531283}
+>
+  <h1
+    className="title"
+    data-jsx={233531283}
+  >
+    React
+    <span
+      className="titleSpan"
+      data-jsx={233531283}
+    >
+      Conf
+    </span>
+  </h1>
+  <div
+    className="hrContainer"
+    data-jsx={233531283}
+  >
+    <hr
+      className="hr"
+      data-jsx={233531283}
+    />
+  </div>
+  <h5
+    className="subtitle"
+    data-jsx={233531283}
+  >
+    Brasil
+     
+    2017
+  </h5>
+</div>
+`;
