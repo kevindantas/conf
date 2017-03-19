@@ -40,9 +40,9 @@ export default class Button extends PureComponent {
 
     return (
       <div className={background} {...style({ ':hover' : { backgroundImage: `url('${pattern}')`}  })}>
-        <div className={cont}>
+        <button className={cont}>
           <h2>{label}</h2>
-        </div>
+        </button>
       </div>
     );
   }

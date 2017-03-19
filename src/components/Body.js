@@ -18,7 +18,6 @@ class App extends PureComponent {
     return (
       <div {...styles.container}>
         <Logo />
-
         <ActionButton />
       </div>
     );
