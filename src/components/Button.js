@@ -34,15 +34,42 @@ const background = css({
   margin: '30px',
 })
 
-export default class Button extends PureComponent {
-  render() {
-    const { label, pattern } = this.props;
+const Input = css({
+  background: 'transparent',
+  fontSize: '1.5em',
 
-    return (
+})
+
+export default class Button extends PureComponent {
+
+  state = { active: false }
+
+  toggleActive = () => {
+
+    this.setState(prevState => ({
+      active: !prevState.active
+    }));
+
+  }
+
+  render() {
+    const { label, pattern, newsletter } = this.props;
+    const { active } = this.state;
+
+    return newsletter ? (
       <div className={background} {...style({ ':hover' : { backgroundImage: `url('${pattern}')`}  })}>
-        <button className={cont}>
+        <div className={cont} onClick={this.toggleActive}>
+          { active ?
+            <input type="email" className={Input} placeholder="Seu email aqui" /> :
+            <h2 > {label} </h2>
+          }
+        </div>
+      </div>
+    ) : (
+      <div className={background} {...style({ ':hover' : { backgroundImage: `url('${pattern}')`}  })}>
+        <div className={cont}>
           <h2>{label}</h2>
-        </button>
+        </div>
       </div>
     );
   }

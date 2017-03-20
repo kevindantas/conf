@@ -20,11 +20,12 @@ class Footer extends PureComponent {
     return (
       <div {...styles.container}>
         <Item title="DATA" subtitle={Globals.date.full}>
-          <p>10:00am - 17:00pm</p>
+          <p>{Globals.date.hour}</p>
         </Item>
 
         <Item title="LOCAL" subtitle={Globals.location.locale}>
-          <p>10:00am - 17:00pm</p>
+          <p>{Globals.location.address}</p>
+          <p>Santa Cecilia</p>
         </Item>
       </div>
     );

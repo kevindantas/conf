@@ -6,8 +6,9 @@ import { MorphReplace } from 'react-svg-morph';
 
 describe('<Logo />', () => {
 
+  const wrapper = shallow(<Logo />);
+
   it('render self', () => {
-    const wrapper = shallow(<Logo />);
     expect(wrapper.is('MorphReplace')).toBe(true)
   });
 

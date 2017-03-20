@@ -7,8 +7,9 @@ import Item from '../../components/Item';
 
 describe('<Item />', () => {
 
+  const wrapper = shallow(<Item />);
+
   it('render self', () => {
-    const wrapper = shallow(<Item />);
     expect(wrapper.is('div')).toBe(true)
   });
 

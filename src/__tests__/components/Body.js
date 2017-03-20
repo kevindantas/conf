@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import TestUtils from 'react-addons-test-utils';
 import Body from '../../components/Body';
@@ -12,11 +11,11 @@ describe('<Body />', () => {
   const wrapper = shallow(<Body />);
 
   it('render Logo', () => {
-    expect(wrapper.find(Logo)).to.have.length(1); // passes
+    expect(wrapper.find(Logo)).toHaveLength(1); // passes
   });
 
   it('render ActionButton', () => {
-    expect(wrapper.find(ActionButton)).to.have.length(1); // passes
+    expect(wrapper.find(ActionButton)).toHaveLength(1); // passes
   });
 
 });

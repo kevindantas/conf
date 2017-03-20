@@ -6,9 +6,10 @@ import Header from '../../components/Header';
 
 
 describe('<Header />', () => {
+  
+  const wrapper = shallow(<Header />);
 
   it('render self', () => {
-    const wrapper = shallow(<Header />);
     expect(wrapper.is('div')).toBe(true)
   });
 

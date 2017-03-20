@@ -1,0 +1,135 @@
+exports[`<Button /> should render a label 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className={
+        Object {
+            "data-css-1yrpvnn": "",
+          }
+    }
+    data-css-a3nw7g="">
+    <div
+        className={
+            Object {
+                "data-css-1knz92t": "",
+              }
+        }>
+        <h2>
+            MyLabel
+        </h2>
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className={
+            Object {
+                  "data-css-1yrpvnn": "",
+                }
+      }
+      data-css-a3nw7g="">
+      <div
+            className={
+                  Object {
+                        "data-css-1knz92t": "",
+                      }
+            }>
+            <h2>
+                  MyLabel
+            </h2>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 1,
+      "_context": Object {},
+      "_currentElement": <Button
+        label="MyLabel" />,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Button {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "label": "MyLabel",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 2,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className={
+                    Object {
+                              "data-css-1yrpvnn": "",
+                            }
+          }
+          data-css-a3nw7g="">
+          <div
+                    className={
+                              Object {
+                                        "data-css-1knz92t": "",
+                                      }
+                    }>
+                    <h2>
+                              MyLabel
+                    </h2>
+          </div>
+</div>,
+        "_debugID": 4,
+        "_renderedOutput": <div
+          className={
+                    Object {
+                              "data-css-1yrpvnn": "",
+                            }
+          }
+          data-css-a3nw7g="">
+          <div
+                    className={
+                              Object {
+                                        "data-css-1knz92t": "",
+                                      }
+                    }>
+                    <h2>
+                              MyLabel
+                    </h2>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Button
+    label="MyLabel" />,
+}
+`;
