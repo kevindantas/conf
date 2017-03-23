@@ -36,9 +36,7 @@ class App extends PureComponent {
     return (
       <div {...styles.container}>
         <Header />
-
         <Body />
-
         <Footer />
       </div>
     );
