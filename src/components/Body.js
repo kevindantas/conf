@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { css } from 'glamor';
+import AnimatedBackground from './AnimatedBackground';
 
 import Logo from './Logo';
 import ActionButton from './ActionButton';
@@ -19,6 +20,7 @@ class App extends PureComponent {
       <div {...styles.container}>
         <Logo />
         <ActionButton />
+        <AnimatedBackground />
       </div>
     );
   }

@@ -14,12 +14,10 @@ css.global('html, body', {
   padding: 0,
   margin: 0,
   fontFamily: 'Rajdhani, sans-serif',
-  background: Globals.colors.background,
 });
 
 const styles = {
   container: css({
-    background: `#161616 url(${BackgroundPattern})`,
     color: 'white',
     height: '100vh',
     width: '100%',
