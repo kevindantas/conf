@@ -7,10 +7,6 @@ import Button from '../../components/Button';
 
 describe('<Button />', () => {
 
-  it('render self', () => {
-    const wrapper = shallow(<Button />);
-    expect(wrapper.is('div')).toBe(true)
-  });
 
   it('should render a label', () => {
     const wrapper = shallow(
@@ -19,18 +15,14 @@ describe('<Button />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a button label', () => {
+  it('should set `href` prop', () => {
+    const link = 'some-link';
     const wrapper = shallow(
-      <Button label="MyLabel" />
+      <Button label="MyLabel" href={link} />
     );
-    expect(wrapper.prop('label')).not.toEqual('MyLabel');
+
+    expect(wrapper.find('a').props().href).toEqual(link);
   });
 
-  // it('should render a document title and a parent title', () => {
-  //   const wrapper = shallow(
-  //     <Button label="MyLabel" pattern="pattern" />
-  //   );
-  //   expect(wrapper.prop('label')).toEqual('MyLabel — pattern');
-  // });
 
 });

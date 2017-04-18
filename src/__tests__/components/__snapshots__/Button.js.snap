@@ -6,43 +6,23 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <div
+  "node": <button
     className={
         Object {
-            "data-css-1yrpvnn": "",
+            "data-css-2dr2o8": "",
           }
-    }
-    data-css-a3nw7g="">
-    <div
-        className={
-            Object {
-                "data-css-1knz92t": "",
-              }
-        }>
-        <h2>
-            MyLabel
-        </h2>
-    </div>
-</div>,
+    }>
+    MyLabel
+</button>,
   "nodes": Array [
-    <div
+    <button
       className={
             Object {
-                  "data-css-1yrpvnn": "",
+                  "data-css-2dr2o8": "",
                 }
-      }
-      data-css-a3nw7g="">
-      <div
-            className={
-                  Object {
-                        "data-css-1knz92t": "",
-                      }
-            }>
-            <h2>
-                  MyLabel
-            </h2>
-      </div>
-</div>,
+      }>
+      MyLabel
+</button>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -52,7 +32,7 @@ ShallowWrapper {
       "_context": Object {},
       "_currentElement": <Button
         label="MyLabel" />,
-      "_debugID": 3,
+      "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Button {
@@ -62,7 +42,10 @@ ShallowWrapper {
           "label": "MyLabel",
         },
         "refs": Object {},
-        "state": null,
+        "state": Object {
+          "active": false,
+        },
+        "toggleActive": [Function],
         "updater": Object {
           "enqueueCallback": [Function],
           "enqueueCallbackInternal": [Function],
@@ -74,50 +57,30 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 2,
+      "_mountOrder": 1,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
+        "_currentElement": <button
           className={
                     Object {
-                              "data-css-1yrpvnn": "",
+                              "data-css-2dr2o8": "",
                             }
-          }
-          data-css-a3nw7g="">
-          <div
-                    className={
-                              Object {
-                                        "data-css-1knz92t": "",
-                                      }
-                    }>
-                    <h2>
-                              MyLabel
-                    </h2>
-          </div>
-</div>,
-        "_debugID": 4,
-        "_renderedOutput": <div
+          }>
+          MyLabel
+</button>,
+        "_debugID": 2,
+        "_renderedOutput": <button
           className={
                     Object {
-                              "data-css-1yrpvnn": "",
+                              "data-css-2dr2o8": "",
                             }
-          }
-          data-css-a3nw7g="">
-          <div
-                    className={
-                              Object {
-                                        "data-css-1knz92t": "",
-                                      }
-                    }>
-                    <h2>
-                              MyLabel
-                    </h2>
-          </div>
-</div>,
+          }>
+          MyLabel
+</button>,
       },
       "_renderedNodeType": 0,
       "_rootNodeID": 0,

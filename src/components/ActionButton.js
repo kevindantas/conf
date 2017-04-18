@@ -7,6 +7,8 @@ import ButtonPattern from '../media/images/buttonPattern.png';
 const styles = {
   container: css({
     textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
     margin: '30px',
     '> h2': {
       margin: 0,
