@@ -23,9 +23,8 @@ class Footer extends PureComponent {
           <p>{Globals.date.hour}</p>
         </Item>
 
-        <Item title="LOCAL" subtitle={Globals.location.locale}>
-          <p>{Globals.location.address}</p>
-          <p>Santa Cecilia</p>
+        <Item title="LOCAL" subtitle={Globals.location.city}>
+          <p>{Globals.location.country}</p>
         </Item>
       </div>
     );
