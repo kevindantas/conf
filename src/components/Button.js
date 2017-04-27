@@ -26,7 +26,11 @@ export default class Button extends PureComponent {
   state = { 
     label: '',
     iterator: 0,
-   };
+  };
+
+  static defaultProps = {
+    glitchInterval: 65,
+  }
 
   componentDidMount() {
     const { label } = this.props;
@@ -40,54 +44,50 @@ export default class Button extends PureComponent {
   /**
    * Glitch the text with random characters
    * 
-   * @param {String} originalText Reference for the final value after the animation
-   * @returns {String}
+   * @param {Object} e Event triggered
    */
-  glitchText() {
-    let { label, originalLabel } = this.state;
+  glitchText(e) {
     // Random string to glitch
     let randomString = 'cmVhY3Rjb25mYnIgMjAxNw';
     // To a random char from randomString
     let randomIndex = Math.floor(Math.random() * (randomString.length-1));
     
-    if(label !== originalLabel && label.length < originalLabel.length + 1) {
-      this.setState((state) => {
+    const { glitchInterval } = this.props;
 
-        let newLabel = state.label;
+    this.setState((state) => {
+      const { label, originalLabel, iterator } = state;
 
-        if(newLabel.length > 1) {
-          newLabel = newLabel.slice(0, -1)
-        }
-        newLabel += originalLabel[state.iterator] + randomString[randomIndex];
+      // If the function was triggered by a event
+      if(e) {
+        setTimeout(this.glitchText.bind(this), glitchInterval);
+        // Clean the label before start to glitch
+        return { label: '' };
+      }
 
-        return {
-          label: newLabel,
-          iterator: state.iterator+1,
-        }
-      });
+      if(label !== originalLabel && label.length < originalLabel.length + 1) {
+          let newLabel = label;
 
-      // Call the glitchText() until the label equal originalLabel
-      setTimeout(this.glitchText.bind(this), 60);
-    } else {
-      this.setState((state) => ({
-        label: state.label.slice(0, -1),
+          // Remove the last glitched char
+          if(newLabel.length > 1) {
+            newLabel = newLabel.slice(0, -1)
+          }
+
+          // Concat newLabel with a new glitch char
+          newLabel += originalLabel[iterator] + randomString[randomIndex];
+          
+          // Call the glitchText() until the label equal originalLabel
+          setTimeout(this.glitchText.bind(this), glitchInterval);
+          return {
+            label: newLabel,
+            iterator: iterator + 1,
+          }
+      }
+
+      return {
+        label: originalLabel,
         iterator: 0,
-      }))
-    }
-  }
-
-
-  /**
-   * Handle mouse enter event on the buttonStyle
-   * 
-   * @param {Object} e - Triggered event 
-   */
-  _onMouseEnter = (e) => {
-
-    this.setState({
-      label: ''
+      };
     });
-    this.glitchText();
   }
 
 
@@ -96,7 +96,7 @@ export default class Button extends PureComponent {
     const { label } = this.state;
 
     return (
-      <a className={buttonStyle} href={href} onMouseEnter={this._onMouseEnter}>
+      <a className={buttonStyle} href={href} onMouseEnter={(e) => this.glitchText(e)}>
         { label }
       </a>
     );
