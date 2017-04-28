@@ -2,14 +2,14 @@ const Globals = {
   location: {
     country: 'Brasil',
     city: 'São Paulo',
-    locale: 'SENAI ',
-    address: ' Alameda Barão de Limeira, 539'
+    locale: '',
+    address: ''
   },
 
   date: {
     year: 2017,
     full: '02.09.2017',
-    hour: '10:00am - 17:00pm',
+    hour: '8:00am - 19:00pm',
   },
 
   colors: {
