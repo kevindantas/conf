@@ -1,15 +1,15 @@
 import React, { PureComponent } from 'react';
 import { css, style } from 'glamor';
-
+import './Button.css';
 import Globals from '../utils/Globals';
 
 const buttonStyle = css({
-  borderRadius: 3,
-  minHeight: 36,
-  padding: '14px 80px',
+  borderRadius: 2,
+  minHeight: 24,
+  padding: '14px 60px',
   margin: 16,
   color: Globals.colors.darken,
-  fontSize: 28,
+  fontSize: 22,
   fontWeight: 600,
   fontFamily: 'Rajdhani, sans-serif',
   textAlign: 'center',
@@ -96,7 +96,7 @@ export default class Button extends PureComponent {
     const { label } = this.state;
 
     return (
-      <a className={buttonStyle} href={href} onMouseEnter={(e) => this.glitchText(e)}>
+      <a className={`${buttonStyle} Button`} href={href} onMouseEnter={(e) => this.glitchText(e)}>
         { label }
       </a>
     );

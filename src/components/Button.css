@@ -1,0 +1,31 @@
+.Button {
+  position: relative;
+}
+
+.Button::before {
+  content: '';
+  width: 60px;
+  height: 50px;  
+  /*background: 
+    linear-gradient(45deg, #12cffe 25%, transparent 25%, transparent 75%, #12cffe 75%, #12cffe), 
+    linear-gradient(45deg, #12cffe 25%, transparent 25%, transparent 75%, #12cffe 75%, #12cffe);*/
+  background: repeating-linear-gradient(-45deg, transparent, transparent 3px, #61DAFB 3px, #61DAFB 4px);
+  position: absolute;
+  top: -10px;
+  left: -5px;
+}
+
+
+.Button::after {
+  content: '';
+  width: 60px;
+  height: 60px;  
+  background: 
+    linear-gradient(45deg, #61DAFB 25%, transparent 25%, transparent 75%, #61DAFB 75%, #61DAFB), 
+    linear-gradient(45deg, #61DAFB 25%, transparent 25%, transparent 75%, #61DAFB 75%, #61DAFB);
+  background-size: 4px 4px;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+}
+
