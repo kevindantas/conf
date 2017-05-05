@@ -18,7 +18,7 @@ class App extends PureComponent {
   render() {
     return (
       <div {...styles.container}>
-        <Logo />
+        {/*<Logo />*/}
         <ActionButton />
         <AnimatedBackground />
       </div>
