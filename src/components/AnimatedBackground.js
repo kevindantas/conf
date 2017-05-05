@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as PIXI from 'pixi.js';
 import Globals from '../utils/Globals';
-import LogoIcon from '../media/images/LogoIcon';
 // Icons
 import Icon1 from '../media/logo/Icon1.svg';
 import Icon2 from '../media/logo/Icon2.svg';
@@ -14,7 +13,7 @@ import Icon6 from '../media/logo/Icon6.svg';
 export default class AnimatedBackground extends Component {
 
 	state = {
-		currentStep: 4,
+		step: 4,
 		timer: 0,
 	}
 
@@ -29,19 +28,34 @@ export default class AnimatedBackground extends Component {
 		this.stage = new PIXI.Container();
 		this.stage.width = window.innerWidth;
 		this.stage.height = window.innerHeight;
-		console.log(PIXI);
 		// FIll a rect with the background color
 		this.animate();
 	}
 
 
 	/**
-	 * Fill canvas background with the global color 
+	 * Fill canvas background with the global color
 	 */
 	animate() {
-		const noiseFilter = new PIXI.filters.VoidFilter(0.7);
-		this.stage.filters = [noiseFilter];
-		this.drawIcon();
+		this.setState((state) => {
+			// Wait for ~180 seconds
+			if(state.timer % 180 === 0) {
+				let step = (state.step + 1) % 6;
+
+				// Draw the logo icon
+				this.drawIcon();
+
+				// Update the step and update the timer
+				return {
+					timer: 1,
+					step,
+				}
+			}
+
+			// Update the timer
+			return { timer: state.timer + 1, }
+		});
+
 		this.renderer.render(this.stage);
 		requestAnimationFrame(this.animate.bind(this))
 	}
@@ -51,22 +65,18 @@ export default class AnimatedBackground extends Component {
 	 * Draw the logo icon
 	 */
 	drawIcon() {
-		const iconTexture = new PIXI.Texture.fromImage(this.icons[this.state.currentStep]);
+		const iconTexture = new PIXI.Texture.fromImage(this.icons[this.state.step]);
 		const icon = new PIXI.Sprite(iconTexture);
 
-		// Icon position 
+		// Icon position
 		let x = (window.innerWidth / 2) - (icon.width / 2);
 		let y = 90;
-		
+
 		const rect = new PIXI.Graphics();
 		rect.beginFill(0x000000, 1);
-		rect.drawRect(x, y, icon.width*2, icon.height);
+		rect.drawRect(x, y, this.stage.width, this.stage.height);
 		// iconTexture.addChild(rect);
 		this.stage.addChild(rect);
-// 		this.stage.filters = [noiseFilter];
-// const noiseFilter = new PIXI.filters.NoiseFilter(0.7);
-// 		this.stage.filters = [noiseFilter];
-// 		this.renderer.render(this.stage);
 		icon.position.x = x;
 		icon.position.y = y;
 		this.stage.addChild(icon);
