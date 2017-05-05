@@ -16,6 +16,7 @@ const styles = {
     textTransform: 'uppercase',
     letterSpacing: 4,
     fontWeight: 'bold',
+    fontSize: 58,
   }),
   titleSpan: css({
     color: Globals.colors.primary,
@@ -25,11 +26,13 @@ const styles = {
   }),
   hr: css({
     borderColor: Globals.colors.primary,
+    width: 30,
+    marginBottom: 8,
   }),
   subtitle: css({
     color: Globals.colors.primary,
     textTransform: 'uppercase',
-    fontSize: 17,
+    fontSize: 20,
     margin: 0,
   }),
 };
@@ -41,9 +44,9 @@ const Title = () => (
       <span {...styles.titleSpan}>Conf</span>
     </h1>
 
-    <div {...styles.hrContainer}>
+    {/*<div {...styles.hrContainer}>*/}
       <hr {...styles.hr} />
-    </div>
+    {/*</div>*/}
 
     <h5 {...styles.subtitle}>{Globals.location.country} {Globals.date.year}</h5>
   </div>

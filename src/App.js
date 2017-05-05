@@ -10,6 +10,12 @@ import Footer from './components/Footer';
 
 import BackgroundPattern from './media/images/backgroundPattern.png';
 
+css.global('*', {
+  padding: 0,
+  margin: 0,
+  boxSizing: 'border-box',
+});
+
 css.global('html, body', {
   padding: 0,
   margin: 0,

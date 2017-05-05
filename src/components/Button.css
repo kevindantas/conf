@@ -1,4 +1,5 @@
 .Button {
+  min-height: 59px;
   position: relative;
 }
 

@@ -16,11 +16,15 @@ const styles = {
     },
     '> h2': {
       margin: 0,
+      marginTop: -6,
+      marginBottom: 6,
       letterSpacing: 6,
     },
     '> p': {
       color: Globals.colors.primary,
       letterSpacing: 2,
+      fontSize: 14,
+      fontWeight: 600,
     },
     '@media(max-width: 720px)': {
       margin: '5px',
