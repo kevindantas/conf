@@ -11,10 +11,13 @@ import Icon6 from '../media/logo/Icon6.svg';
 
 
 export default class AnimatedBackground extends Component {
+	// Interval between icon changes
+	changeIconInterval = 45;
 
 	state = {
-		step: 4,
-		timer: 0,
+		step: 0,
+		// TODO: Give some time to load the textures
+		timer: this.changeIconInterval - 10,
 	}
 
 	componentDidMount() {
@@ -22,7 +25,14 @@ export default class AnimatedBackground extends Component {
 		this.renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
 		canvasBg.appendChild(this.renderer.view);
 
-		this.icons = [Icon1, Icon2, Icon3, Icon4, Icon5, Icon6];
+		// Create all icon textures and sprites
+		let icons = [Icon1, Icon2, Icon3, Icon4, Icon5, Icon6];
+		this.icons = icons.map((icon) => {
+			return new PIXI.Texture.fromImage(icon);
+		});
+
+		// Create a sprite for the icon
+		this.icon = new PIXI.Sprite(this.icons[this.state.step]);
 
 		// Create a new container
 		this.stage = new PIXI.Container();
@@ -39,7 +49,7 @@ export default class AnimatedBackground extends Component {
 	animate() {
 		this.setState((state) => {
 			// Wait for ~180 seconds
-			if(state.timer % 180 === 0) {
+			if(state.timer % this.changeIconInterval === 0) {
 				let step = (state.step + 1) % 6;
 
 				// Draw the logo icon
@@ -65,21 +75,16 @@ export default class AnimatedBackground extends Component {
 	 * Draw the logo icon
 	 */
 	drawIcon() {
-		const iconTexture = new PIXI.Texture.fromImage(this.icons[this.state.step]);
-		const icon = new PIXI.Sprite(iconTexture);
-
 		// Icon position
-		let x = (window.innerWidth / 2) - (icon.width / 2);
+		let x = (window.innerWidth / 2) - (this.icon.width / 2);
 		let y = 90;
 
-		const rect = new PIXI.Graphics();
-		rect.beginFill(0x000000, 1);
-		rect.drawRect(x, y, this.stage.width, this.stage.height);
-		// iconTexture.addChild(rect);
-		this.stage.addChild(rect);
-		icon.position.x = x;
-		icon.position.y = y;
-		this.stage.addChild(icon);
+		this.icon.position.x = x;
+		this.icon.position.y = y;
+
+		// Swap texture
+		this.icon.texture = this.icons[this.state.step];
+		this.stage.addChild(this.icon);
 	}
 
 
@@ -93,10 +98,7 @@ export default class AnimatedBackground extends Component {
 			pointerEvents: 'none',
 		};
 		return (
-			<div>
-				<div id="AnimatedBackground" ref="canvasBg" style={style}>
-
-				</div>
+			<div id="AnimatedBackground" ref="canvasBg" style={style}>
 			</div>
 		);
 	}
