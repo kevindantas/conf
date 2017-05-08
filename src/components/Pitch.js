@@ -1,0 +1,32 @@
+import React, { PureComponent } from 'react';
+import { css } from 'glamor';
+
+import Globals from '../utils/Globals';
+
+import Text from './Text';
+
+const styles = {
+  container: css({
+    alignSelf: 'flex-end',
+    background: '#f0f0f0',
+    width: '100vw',
+    display: 'flex',
+    '@media(max-width: 720px)': {
+      alignSelf: 'auto',
+    }
+  }),
+};
+
+class Pitch extends PureComponent {
+  render() {
+    return (
+      <div {...styles.container}>
+        <Text title="" subtitle={Globals.pitch.title}>
+          <p>{Globals.pitch.text}</p>
+        </Text>
+      </div>
+    );
+  }
+}
+
+export default Pitch;

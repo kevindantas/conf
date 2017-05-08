@@ -8,9 +8,14 @@ import Item from './Item';
 const styles = {
   container: css({
     alignSelf: 'flex-end',
+    // background: '#333333',
+    // width: '100vw',
     display: 'flex',
     '@media(max-width: 720px)': {
-      alignSelf: 'auto',
+      alignSelf: 'flex-end',
+      display:'block',
+      width:'80%',
+      margin:'0 auto'
     }
   }),
 };
