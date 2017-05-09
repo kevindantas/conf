@@ -17,7 +17,7 @@ const styles = {
   }),
 };
 
-class Eco extends PureComponent {
+class TextEco extends PureComponent {
   render() {
     return (
       <div {...styles.container}>
@@ -33,4 +33,4 @@ class Eco extends PureComponent {
   }
 }
 
-export default Eco;
+export default TextEco;
