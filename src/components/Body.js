@@ -6,7 +6,9 @@ import TextPitch from './TextPitch';
 import TextSponsor from './TextSponsor';
 import CardTopics from './CardTopics';
 import TextContact from './TextContact';
+import TextMeetup from './TextMeetup';
 import Footer from './Footer';
+import Infos from './Infos';
 
 const styles = {
   container: css({
@@ -23,11 +25,13 @@ class App extends PureComponent {
     return (
       <div {...styles.container}>
         <Logo />
-        <Footer />
+        <Infos />
         <TextPitch />
         <CardTopics />
         <TextSponsor />
+        <TextMeetup />
         <TextContact />
+        <Footer />
       </div>
     );
   }

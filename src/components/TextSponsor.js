@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import { css } from 'glamor';
 
-import Globals from '../utils/Globals';
-
 import Text from './Text';
 
 const styles = {
@@ -15,6 +13,9 @@ const styles = {
       alignSelf: 'auto',
     }
   }),
+  link: css({
+    color: '#666666',
+  }),
 };
 
 class TextSponsor extends PureComponent {
@@ -23,7 +24,7 @@ class TextSponsor extends PureComponent {
       <div {...styles.container}>
         <Text title="PATROCINADORES" subtitle='Utiliza React na sua empresa?'>
           <p>Informações sobre cotas de patrocínio e apoios: <br/>
-          <a href="mailto:reactconfbr@gmail.com"><b>reactconfbr@gmail.com</b></a>
+          <a href="mailto:reactconfbr@gmail.com"  {...styles.link}><b>reactconfbr@gmail.com</b></a>
           </p>
         </Text>
       </div>

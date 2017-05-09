@@ -1,13 +1,11 @@
 import React, { PureComponent } from 'react';
 import { css } from 'glamor';
 
-import Globals from '../utils/Globals';
-
 import Item from './Item';
 
 const styles = {
   container: css({
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
     // background: '#333333',
     // width: '100vw',
     display: 'flex',
@@ -18,18 +16,26 @@ const styles = {
       margin:'0 auto'
     }
   }),
+
+  link: css({
+    color: '#ffffff',
+  }),
 };
 
 class Footer extends PureComponent {
   render() {
     return (
       <div {...styles.container}>
-        <Item title="DATA" subtitle={Globals.date.full}>
-          <p>{Globals.date.hour}</p>
+
+        <Item title="Organização" subtitle="REACT BRASIL">
         </Item>
 
-        <Item title="LOCAL" subtitle={Globals.location.city}>
-          <p>{Globals.location.country}</p>
+        <Item title="Criado com" subtitle="">
+          <p><a {...styles.link} href='https://github.com/facebookincubator/create-react-app/'>create-react-app</a></p>
+        </Item>
+
+        <Item title="Outras Confs no mundo" subtitle="">
+          <p><a {...styles.link} href='https://facebook.github.io/react/community/conferences.html'>Outras conferências Facebook</a></p>
         </Item>
       </div>
     );

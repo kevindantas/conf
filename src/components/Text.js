@@ -23,6 +23,12 @@ const styles = {
       color: Globals.colors.darken,
       fontSize:'20px'
     },
+    '> span': {
+      color: Globals.colors.darken,
+      fontSize:'20px',
+      padding: '20px 20px 0 20px',
+      display: 'inline-block',
+    },
     '@media(max-width: 720px)': {
       width: '80%',
       maxWidth: '80%',
