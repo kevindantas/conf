@@ -17,16 +17,18 @@ const styles = {
   }),
 };
 
-class TextPitch extends PureComponent {
+class TextSponsor extends PureComponent {
   render() {
     return (
       <div {...styles.container}>
-        <Text title="COMUNIDADE REACT BRASIL" subtitle="BLEEDING EDGE">
-          <p>{Globals.pitch.text}</p>
+        <Text title="PATROCINADORES" subtitle='Utiliza React na sua empresa?'>
+          <p>Informações sobre cotas de patrocínio e apoios: <br/>
+          <a href="mailto:reactconfbr@gmail.com"><b>reactconfbr@gmail.com</b></a>
+          </p>
         </Text>
       </div>
     );
   }
 }
 
-export default TextPitch;
+export default TextSponsor;

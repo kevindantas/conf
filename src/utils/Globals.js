@@ -16,6 +16,7 @@ const Globals = {
     background: '#555555',
     primary: '#61DAFB',
     darken: '#161616',
+    gray: '#666666',
     white: '#FFFFFF',
   },
 

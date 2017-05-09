@@ -3,7 +3,9 @@ import { css } from 'glamor';
 
 import Logo from './Logo';
 import TextPitch from './TextPitch';
-import ItemTopics from './ItemTopics';
+import TextSponsor from './TextSponsor';
+import CardTopics from './CardTopics';
+import TextContact from './TextContact';
 import Footer from './Footer';
 
 const styles = {
@@ -23,7 +25,9 @@ class App extends PureComponent {
         <Logo />
         <Footer />
         <TextPitch />
-        <ItemTopics />
+        <CardTopics />
+        <TextSponsor />
+        <TextContact />
       </div>
     );
   }

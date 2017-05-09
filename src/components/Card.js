@@ -5,32 +5,43 @@ import Globals from '../utils/Globals';
 
 const styles = {
   container: css({
+    textAlign: 'left',
+    textTransform: 'uppercase',
+    background: '#FFFFFF',
+    display: 'inline-block',
+    columnBreakInside: 'avoid',
+    border: '2px solid #fcfcfc',
+    boxShadow: '0 1px 2px rgba(34, 25, 25, 0.4)',
     borderTop: `3px solid ${Globals.colors.primary}`,
-    width: '50%',
-    maxWidth: '50%',
-    margin: '30px auto',
+    margin: '0 10px 15px',
+    padding: '5px 10px',
     '> h3': {
       color: Globals.colors.primary,
       margin: 0,
-      textTransform: 'uppercase',
+      // lineHeight: '1'
+      // letterSpacing: 2,
     },
     '> h2': {
       margin: 0,
+      // lineHeight: '1'
+      // letterSpacing: 6,
+    },
+    '> h4': {
       color: Globals.colors.gray,
-      textTransform: 'uppercase',
+      margin: 0,
+      // lineHeight: '1'
+      // letterSpacing: 6,
     },
     '> p': {
       color: Globals.colors.darken,
-      fontSize:'20px'
-    },
-    '@media(max-width: 720px)': {
-      width: '80%',
-      maxWidth: '80%',
+      // lineHeight: '1',
+      margin: 0,
+      // letterSpacing: 2,
     },
   }),
 };
 
-class Text extends PureComponent {
+class Card extends PureComponent {
   render() {
     const { title, subtitle, children } = this.props;
 
@@ -45,4 +56,4 @@ class Text extends PureComponent {
   }
 }
 
-export default Text;
+export default Card;

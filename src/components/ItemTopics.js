@@ -11,7 +11,11 @@ const styles = {
     alignSelf: 'flex-end',
     background: '#FFFFFF',
     width: '100vw',
-    display: 'block',
+    columnWidth: '320px',
+    columnGap: '15px',
+    width: '90%',
+    maxWidth: '1100px',
+    margin: '50px auto',
     '@media(max-width: 720px)': {
       alignSelf: 'auto',
     }
@@ -19,7 +23,8 @@ const styles = {
   container: css({
     // alignSelf: 'flex',
     background: '#FFFFFF',
-    display: 'block',
+    display: 'inline-block',
+    columnBreakInside: 'avoid',
     '@media(max-width: 720px)': {
       alignSelf: 'flex',
       display:'block',
