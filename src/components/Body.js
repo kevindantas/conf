@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { css } from 'glamor';
 
 import Logo from './Logo';
-import Pitch from './Pitch';
-import Eco from './Eco';
+import TextPitch from './TextPitch';
+import TextEco from './TextEco';
 import Footer from './Footer';
 
 const styles = {
@@ -22,8 +22,8 @@ class App extends PureComponent {
       <div {...styles.container}>
         <Logo />
         <Footer />
-        <Pitch />
-        <Eco />
+        <TextPitch />
+        <TextEco />
       </div>
     );
   }

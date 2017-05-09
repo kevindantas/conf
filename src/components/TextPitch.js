@@ -17,11 +17,11 @@ const styles = {
   }),
 };
 
-class Pitch extends PureComponent {
+class TextPitch extends PureComponent {
   render() {
     return (
       <div {...styles.container}>
-        <Text title="" subtitle={Globals.pitch.title}>
+        <Text title="BLEEDING EDGE" subtitle={Globals.pitch.title}>
           <p>{Globals.pitch.text}</p>
         </Text>
       </div>
@@ -29,4 +29,4 @@ class Pitch extends PureComponent {
   }
 }
 
-export default Pitch;
+export default TextPitch;

@@ -26,8 +26,8 @@ const Globals = {
   },
 
   pitch: {
-    title: 'Pitch',
-    text: 'A comunidade React Brasil é a organizadora da primeira conferência React na América Latina. Inspirados nas conferências que acontecem nos Estados Unidos e Europa, nossos membros organizam-se e interagem através de Issues e Pull Requests no GitHub, Hangouts com transmissão online, grupos no Slack e encontros presenciais em Meetups espalhados por todo o Brasil. Queremos conectar empresas, fornecedores e a comunidade para que esta conferência faça a diferença na evolução da tecnologia React e beneficie a vida de todos os participantes.'
+    title: 'COMUNIDADE REACT BRASIL',
+    text: 'A primeira React Conf da América Latina é no Brasil. Inspirados nas conferências dos Estados Unidos e Europa, queremos reunir em um único dia o bleeding edge dos desenvolvedores e empresas de tecnologia, com um único propósito: move foward.'
   },
 
   eco: {
