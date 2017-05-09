@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as PIXI from 'pixi.js';
-import Globals from '../utils/Globals';
 // Icons
 import Icon1 from '../media/logo/Icon1.svg';
 import Icon2 from '../media/logo/Icon2.svg';
@@ -20,6 +19,7 @@ export default class AnimatedBackground extends Component {
 		timer: this.changeIconInterval - 10,
 	}
 
+
 	componentDidMount() {
 		const { canvasBg } = this.refs;
 		this.renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
@@ -38,7 +38,11 @@ export default class AnimatedBackground extends Component {
 		this.stage = new PIXI.Container();
 		this.stage.width = window.innerWidth;
 		this.stage.height = window.innerHeight;
-		// FIll a rect with the background color
+		// FIll background with pattern 
+		this.stage.addChild(this.drawDotGrid(35, 0.25));
+		this.stage.addChild(this.drawDotGrid(15, 0.12));
+		this.stage.addChild(this.drawDotGrid(10, 0.05));
+		
 		this.animate();
 	}
 
@@ -88,9 +92,54 @@ export default class AnimatedBackground extends Component {
 	}
 
 
+	/**
+	 * Draw a dot grid
+	 * @param {int} dotDistance Distance between the dots
+	 * @param {float} opacity Dot opacity
+	 * @param {hex} color Dot color
+	 * 
+	 * @returns {Graphics} 
+	 */
+	drawDotGrid(dotDistance = 35, opacity = 0.2, color = 0xffffff) {
+		const width = window.innerWidth;
+		const height = window.innerHeight;
+		let dotsX = Math.floor(width / dotDistance);
+		let dotsY = Math.floor(height / dotDistance);
+
+		const graphics = new PIXI.Graphics();
+		for (let i = 0; i < dotsX; i++) {
+			for (let j = 0; j < dotsY; j++) {
+				var circle = this.drawCircle(graphics, dotDistance * i, dotDistance * j, 1, color, opacity)
+			}
+		}
+
+		return graphics;
+	}
+	
+
+	/**
+	 * Draw a circle using PIXI.js
+	 * @param {Graphics} graphics Instance to draw the graphics
+	 * @param {int} x
+	 * @param {int} y
+	 * @param {int} radius Circle size (default = 5)
+	 * @param {hex} color Circle color (default = 0xffffff)
+	 * @param {float} opacity Circle opacity
+	 * 
+	 * @return Circle drawed
+	 */
+	drawCircle(graphics, x, y, radius = 1, color = 0xffffff, opacity = 0.3) {
+		graphics.beginFill(color, opacity);
+		graphics.drawCircle(x, y, radius)
+		return graphics;
+	}
+
+
 	render() {
 		const style = {
-			background: '#96b6bf',
+			width: '100%',
+			height: '100%',
+			background: '#000',
 			position: 'fixed',
 			top: 0,
 			left: 0,
