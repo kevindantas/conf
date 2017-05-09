@@ -38,6 +38,10 @@ const Globals = {
     item3: 'Create React App foi a solução estrela em ascensão para iniciar rapidamente um novo projeto de interface reativa',
     item4: 'React Native foi estrela em ascensão dentre os framework para construção de apps nativas móveis',
     item5: 'Redux foi a biblioteca de gerenciamento de estado baseada em conceitos funcionais estrela em ascensão'
+  },
+  topics: {
+    title: 'O QUE QUEREMOS VER',
+    text: 'Votação no GitHub propondo assuntos:'
   }
 };
 

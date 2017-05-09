@@ -3,7 +3,7 @@ import { css } from 'glamor';
 
 import Logo from './Logo';
 import TextPitch from './TextPitch';
-import TextEco from './TextEco';
+import ItemTopics from './ItemTopics';
 import Footer from './Footer';
 
 const styles = {
@@ -23,7 +23,7 @@ class App extends PureComponent {
         <Logo />
         <Footer />
         <TextPitch />
-        <TextEco />
+        <ItemTopics />
       </div>
     );
   }

@@ -18,10 +18,16 @@ const styles = {
       margin: 0,
       letterSpacing: 6,
     },
+    '> h4': {
+      color: Globals.colors.darken,
+      margin: 0,
+      letterSpacing: 6,
+    },
     '> p': {
       color: Globals.colors.primary,
       letterSpacing: 2,
     },
+
     '@media(max-width: 720px)': {
       margin: '5px',
     },
