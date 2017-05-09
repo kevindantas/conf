@@ -100,7 +100,7 @@ class TextContact extends PureComponent {
             </a></span>
               
 
-                <span><a href="https://www.facebook.com/reactconbr/" target="_blank">
+                <span><a href="https://www.facebook.com/reactconf/" target="_blank">
                 <svg id="facebook" width='48px' height='48px' viewBox="0 0 510 510">
                   <g>
                     <g id="post-facebook">
