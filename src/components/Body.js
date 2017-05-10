@@ -4,7 +4,7 @@ import { css } from 'glamor';
 import Logo from './Logo';
 import TextPitch from './TextPitch';
 import TextSponsor from './TextSponsor';
-import CardTopics from './CardTopics';
+import Topics from './Topics';
 import TextContact from './TextContact';
 import TextMeetup from './TextMeetup';
 import Footer from './Footer';
@@ -27,7 +27,7 @@ class App extends PureComponent {
         <Logo />
         <Infos />
         <TextPitch />
-        <CardTopics />
+        <Topics />
         <TextSponsor />
         <TextMeetup />
         <TextContact />

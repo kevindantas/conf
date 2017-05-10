@@ -18,39 +18,27 @@ const styles = {
     '> h3': {
       color: Globals.colors.primary,
       margin: 0,
-      // lineHeight: '1'
-      // letterSpacing: 2,
-    },
-    '> h2': {
-      margin: 0,
-      // lineHeight: '1'
-      // letterSpacing: 6,
     },
     '> h4': {
       color: Globals.colors.gray,
       margin: 0,
-      // lineHeight: '1'
-      // letterSpacing: 6,
     },
     '> p': {
       color: Globals.colors.darken,
-      // lineHeight: '1',
       margin: 0,
-      // letterSpacing: 2,
     },
   }),
 };
 
 class Card extends PureComponent {
   render() {
-    const { title, subtitle, children } = this.props;
+    const { topic, author, votes } = this.props;
 
     return (
       <div {...styles.container}>
-        <h3>{title}</h3>
-        <h2>{subtitle}</h2>
-
-        {children}
+        <h3>{topic}</h3>
+        <h4>{author}</h4>
+        <p>{votes}</p>
       </div>
     );
   }
