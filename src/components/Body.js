@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react';
 import { css } from 'glamor';
 
 import Logo from './Logo';
-import TextPitch from './TextPitch';
-import TextSponsor from './TextSponsor';
+import Pitch from './Pitch';
+import Sponsor from './Sponsor';
 import Topics from './Topics';
-import TextContact from './TextContact';
-import TextMeetup from './TextMeetup';
+import Contact from './Contact';
+import Meetup from './Meetup';
 import Footer from './Footer';
 import Infos from './Infos';
 
@@ -26,11 +26,11 @@ class App extends PureComponent {
       <div {...styles.container}>
         <Logo />
         <Infos />
-        <TextPitch />
+        <Pitch />
         <Topics />
-        <TextSponsor />
-        <TextMeetup />
-        <TextContact />
+        <Sponsor />
+        <Meetup />
+        <Contact />
         <Footer />
       </div>
     );
