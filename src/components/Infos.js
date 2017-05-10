@@ -8,8 +8,6 @@ import Item from './Item';
 const styles = {
   container: css({
     alignSelf: 'flex-end',
-    // background: '#333333',
-    // width: '100vw',
     display: 'flex',
     '@media(max-width: 720px)': {
       alignSelf: 'flex-end',

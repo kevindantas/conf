@@ -19,6 +19,11 @@ const styles = {
       color: Globals.colors.gray,
       textTransform: 'uppercase',
     },
+    '> h4': {
+      color: Globals.colors.darken,
+      margin: 0,
+      letterSpacing: 6,
+    },
     '> p': {
       color: Globals.colors.darken,
       fontSize:'20px'
