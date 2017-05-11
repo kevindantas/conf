@@ -27,16 +27,16 @@ class Footer extends PureComponent {
     return (
       <div {...styles.container}>
 
-        <Item title="Organização" subtitle="REACT BRASIL">
+        
+
+        <Item title="#REACTCONFBR" subtitle='REACT BRASIL'>
+        </Item>
+        <Item>
+          <p>Branding: <a {...styles.link} href='https://informatica.sp.senai.br'>Escola SENAI Informática</a></p>
+          <p>Criado com: <a {...styles.link} href='https://github.com/facebookincubator/create-react-app/'>create-react-app</a></p>
+          <p>React Confs no mundo: <a {...styles.link} href='https://facebook.gihtub.io/react/community/conferences.html'>Conferences React</a></p>
         </Item>
 
-        <Item title="Criado com" subtitle="">
-          <p><a {...styles.link} href='https://github.com/facebookincubator/create-react-app/'>create-react-app</a></p>
-        </Item>
-
-        <Item title="Outras Confs no mundo" subtitle="">
-          <p><a {...styles.link} href='https://facebook.github.io/react/community/conferences.html'>Outras conferências Facebook</a></p>
-        </Item>
       </div>
     );
   }

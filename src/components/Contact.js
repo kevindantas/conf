@@ -13,6 +13,9 @@ const styles = {
       alignSelf: 'auto',
     }
   }),
+  link: css({
+    color: '#666666',
+  }),
 };
 
 class TextContact extends PureComponent {
@@ -112,14 +115,9 @@ class TextContact extends PureComponent {
                 </svg>
             </a></span>
 
-                  
-
-                  
-
-
-
-
-
+            <p>Ajude a manter esta página. Envie sua Pull Request:<br/>
+              <a {...styles.link} href='https://github.com/react-brasil/conf'>https://github.com/react-brasil/conf</a>
+            </p>
         </Text>
       </div>
     );
