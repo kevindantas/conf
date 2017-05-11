@@ -6,17 +6,18 @@ import Globals from '../utils/Globals';
 const styles = {
   container: css({
     borderTop: `3px solid ${Globals.colors.primary}`,
-    textAlign: 'left',
-    margin: '30px',
-    textTransform: 'uppercase',
+    width: '50%',
+    maxWidth: '50%',
+    margin: '30px auto',
     '> h3': {
       color: Globals.colors.primary,
       margin: 0,
-      letterSpacing: 2,
+      textTransform: 'uppercase',
     },
     '> h2': {
       margin: 0,
-      letterSpacing: 6,
+      color: Globals.colors.gray,
+      textTransform: 'uppercase',
     },
     '> h4': {
       color: Globals.colors.darken,
@@ -24,17 +25,23 @@ const styles = {
       letterSpacing: 6,
     },
     '> p': {
-      color: Globals.colors.primary,
-      letterSpacing: 2,
+      color: Globals.colors.darken,
+      fontSize:'20px'
     },
-
+    '> span': {
+      color: Globals.colors.darken,
+      fontSize:'20px',
+      padding: '20px 20px 0 20px',
+      display: 'inline-block',
+    },
     '@media(max-width: 720px)': {
-      margin: '5px',
+      width: '80%',
+      maxWidth: '80%',
     },
   }),
 };
 
-class Item extends PureComponent {
+class Text extends PureComponent {
   render() {
     const { title, subtitle, children } = this.props;
 
@@ -49,4 +56,4 @@ class Item extends PureComponent {
   }
 }
 
-export default Item;
+export default Text;
