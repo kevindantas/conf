@@ -6,8 +6,6 @@ import Item from './Item';
 const styles = {
   container: css({
     alignSelf: 'center',
-    // background: '#333333',
-    // width: '100vw',
     display: 'flex',
     '@media(max-width: 720px)': {
       alignSelf: 'flex-end',
@@ -26,8 +24,6 @@ class Footer extends PureComponent {
   render() {
     return (
       <div {...styles.container}>
-
-        
 
         <Item title="#REACTCONFBR" subtitle='REACT BRASIL'>
         </Item>

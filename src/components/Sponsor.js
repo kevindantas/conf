@@ -24,7 +24,7 @@ class TextSponsor extends PureComponent {
       <div {...styles.container}>
         <Text title="PATROCINADORES" subtitle='Utiliza React na sua empresa?'>
           <p>Informações sobre cotas de patrocínio e apoios: <br/>
-          <a href="mailto:reactconfbr@gmail.com"  {...styles.link}><b>reactconfbr@gmail.com</b></a>
+            <a href="mailto:reactconfbr@gmail.com"  {...styles.link}><b>reactconfbr@gmail.com</b></a>
           </p>
         </Text>
       </div>

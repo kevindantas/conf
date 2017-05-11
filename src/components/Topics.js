@@ -27,7 +27,7 @@ class Topics extends PureComponent {
     return (
       <div {...styles.containerText}>
         <Text title="Tópicos" subtitle={Globals.topics.title}>
-        <p>{Globals.topics.text}</p>
+          <p>{Globals.topics.text}</p>
           <div {...styles.container}>
             <Card topic='REACT NATIVE' author='sibelius' votes='28+' />
             <Card topic='REACT + REDUX' author='Kirmayrtomaz' votes='25+' />

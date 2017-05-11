@@ -10,8 +10,6 @@ const styles = {
     paddingTop: 30,
     paddingBottom: 30,
     textAlign: 'left',
-    // background: '#222222',
-    // width: '100vw'
   }),
   title: css({
     color: Globals.colors.white,
