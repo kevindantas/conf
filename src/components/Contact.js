@@ -24,7 +24,7 @@ class TextContact extends PureComponent {
       <div {...styles.container}>
         <Text title="CONTATO" subtitle='Entre para a nossa comunidade'>
 
-          <span><a href="http://react-brasil-slack.herokuapp.com" target="_blank">
+          <span><a title='slack' href="http://react-brasil-slack.herokuapp.com" target="_blank">
             <svg id="slack" x="0px" y="0px" width='48px' height='48px' viewBox="0 0 31.444 31.443">
             <g>
               <path fill="gray" d="M31.202,16.369c-0.62-1.388-2.249-2.011-3.637-1.391l-1.325,0.594l-3.396-7.591l1.325-0.592
@@ -40,7 +40,7 @@ class TextContact extends PureComponent {
             </svg>
           </a></span>
 
-            <span><a href="http://twitter.com/reactconfbr" target="_blank">
+            <span><a title='twitter' href="http://twitter.com/reactconfbr" target="_blank">
             <svg id="twitter" x="0px" y="0px" width='48px' height='48px' viewBox="0 0 97.637 97.637">
               <g>
                 <path fill="gray" d="M97.523,18.526c-0.14-0.165-0.371-0.221-0.568-0.131c-2.919,1.295-5.99,2.226-9.153,2.776
@@ -59,7 +59,7 @@ class TextContact extends PureComponent {
             </a></span>
             
 
-              <span><a href="https://github.com/react-brasil" target="_blank">
+              <span><a title='github' href="https://github.com/react-brasil" target="_blank">
               <svg id="github" x="0px" y="0px" width='48px' height='48px' viewBox="0 0 438.536 438.536">
                 <g>
                   <g>
@@ -103,7 +103,7 @@ class TextContact extends PureComponent {
             </a></span>
               
 
-                <span><a href="https://www.facebook.com/reactconf/" target="_blank">
+                <span><a title='facebook' href="https://www.facebook.com/reactconf/" target="_blank">
                 <svg id="facebook" width='48px' height='48px' viewBox="0 0 510 510">
                   <g>
                     <g id="post-facebook">
