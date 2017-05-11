@@ -1,7 +1,7 @@
 {
   "name": "reactconf",
   "homepage": "http://reactconfbr.com.br/",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.9.4"
