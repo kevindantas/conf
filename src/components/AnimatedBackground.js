@@ -7,11 +7,12 @@ import Icon3 from '../media/logo/Icon3.svg';
 import Icon4 from '../media/logo/Icon4.svg';
 import Icon5 from '../media/logo/Icon5.svg';
 import Icon6 from '../media/logo/Icon6.svg';
+import RGBSlitFilter from '../utils/RGBSlitFilter';
 
 
 export default class AnimatedBackground extends Component {
 	// Interval between icon changes
-	changeIconInterval = 45;
+	changeIconInterval = 90;
 
 	state = {
 		step: 0,
@@ -39,9 +40,9 @@ export default class AnimatedBackground extends Component {
 		this.stage.width = window.innerWidth;
 		this.stage.height = window.innerHeight;
 		// FIll background with pattern 
-		this.stage.addChild(this.drawDotGrid(35, 0.25));
-		this.stage.addChild(this.drawDotGrid(15, 0.12));
-		this.stage.addChild(this.drawDotGrid(10, 0.05));
+		this.stage.addChild(this.drawDotGrid(35, 0.3));
+		this.stage.addChild(this.drawDotGrid(15, 0.15));
+		this.stage.addChild(this.drawDotGrid(10, 0.1));
 		
 		this.animate();
 	}
@@ -51,9 +52,18 @@ export default class AnimatedBackground extends Component {
 	 * Fill canvas background with the global color
 	 */
 	animate() {
+		const { changeIconInterval } = this;
 		this.setState((state) => {
+			// Glitch before change the logo icon
+			// Animating 7 frames before the changeIconInterval
+			if(state.timer > changeIconInterval - 7 && state.timer < changeIconInterval - 1) {
+				let x = (window.innerWidth / 2) - (this.icon.width / 2);
+				let y = 90;
+				this.glitchElement(this.icon, x, y);
+			}
+
 			// Wait for ~180 seconds
-			if(state.timer % this.changeIconInterval === 0) {
+			if(state.timer % changeIconInterval === 0) {
 				let step = (state.step + 1) % 6;
 
 				// Draw the logo icon
@@ -88,7 +98,30 @@ export default class AnimatedBackground extends Component {
 
 		// Swap texture
 		this.icon.texture = this.icons[this.state.step];
+		// Remove all glitches filters from the icon
+		this.icon.filters = null;
+
 		this.stage.addChild(this.icon);
+	}
+
+
+	/**
+	 * Glitch a element
+	 * @param {Object} elem - Element to be glitched
+	 * @param {int} x Original X position 
+	 * @param {int} y Original Y position
+	 */
+	glitchElement(elem, x, y) {
+		// Add filters for the element
+		elem.filters = [new RGBSlitFilter()];
+		// Generate a random X,Y position for the elment
+		let randomTranslateX = Math.floor(Math.random() * 100) - 50;
+		let randomTranslateY = Math.floor(Math.random() * 100) - 50;
+
+		elem.position.x = x + randomTranslateX;
+		elem.position.y = y - randomTranslateY;
+
+		return elem
 	}
 
 
