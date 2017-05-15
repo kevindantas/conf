@@ -18,6 +18,7 @@ const styles = {
     justifyContent: 'center',
     flexDirection: 'column',
     width: '100%',
+    paddingTop: '50vh',
   }),
 };
 

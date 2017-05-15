@@ -90,8 +90,8 @@ export default class AnimatedBanner extends Component {
 	 */
 	drawIcon() {
 		// Icon position
-		let x = (window.innerWidth / 2) - (this.icon.width / 2);
-		let y = 90;
+		const x = (window.innerWidth / 2) - (this.icon.width / 2);
+		const y = window.innerWidth / 100 * 10; // Create VH units
 
 		this.icon.position.x = x;
 		this.icon.position.y = y;
