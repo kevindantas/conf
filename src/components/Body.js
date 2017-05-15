@@ -1,9 +1,15 @@
 import React, { PureComponent } from 'react';
 import { css } from 'glamor';
-import AnimatedBackground from './AnimatedBackground';
+import AnimatedBanner from './AnimatedBanner';
 
 import Logo from './Logo';
-import ActionButton from './ActionButton';
+import Pitch from './Pitch';
+import Sponsor from './Sponsor';
+import Topics from './Topics';
+import Contact from './Contact';
+import Meetup from './Meetup';
+import Footer from './Footer';
+import Infos from './Infos';
 
 const styles = {
   container: css({
@@ -11,8 +17,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    position: 'absolute',
-    bottom: 0,
+    width: '100%',
   }),
 };
 
@@ -20,9 +25,15 @@ class App extends PureComponent {
   render() {
     return (
       <div {...styles.container}>
-        {/*<Logo />*/}
-        <ActionButton />
-        <AnimatedBackground />
+        {/*<ActionButton />*/}
+        <AnimatedBanner />
+        <Infos />
+        <Pitch />
+        <Topics />
+        <Sponsor />
+        <Meetup />
+        <Contact />
+        <Footer />
       </div>
     );
   }

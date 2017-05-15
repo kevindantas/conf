@@ -7,7 +7,8 @@ const styles = {
   header: css({
     alignSelf: 'flex-start',
     justifyContent: 'flex-start',
-    margin: 30,
+    paddingTop: 30,
+    paddingBottom: 30,
     textAlign: 'left',
   }),
   title: css({
@@ -17,16 +18,19 @@ const styles = {
     letterSpacing: 4,
     fontWeight: 'bold',
     fontSize: 58,
+    marginLeft: 30,
   }),
   titleSpan: css({
     color: Globals.colors.primary,
   }),
   hrContainer: css({
     width: 25,
+    marginLeft: 30,
   }),
   hr: css({
     borderColor: Globals.colors.primary,
     width: 30,
+    marginLeft: 30,
     marginBottom: 8,
   }),
   subtitle: css({
@@ -34,6 +38,7 @@ const styles = {
     textTransform: 'uppercase',
     fontSize: 20,
     margin: 0,
+    marginLeft: 30,
   }),
 };
 

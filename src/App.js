@@ -6,7 +6,6 @@ import Globals from './utils/Globals';
 import Body from './components/Body';
 
 import Header from './components/Header';
-import Footer from './components/Footer';
 
 import BackgroundPattern from './media/images/backgroundPattern.png';
 
@@ -25,9 +24,9 @@ css.global('html, body', {
 const styles = {
   container: css({
     color: 'white',
-    height: '100vh',
+    // height: '100vh',
     width: '100%',
-    minWidth: '100vw',
+    minWidth: '100%',
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
@@ -41,7 +40,6 @@ class App extends PureComponent {
       <div {...styles.container}>
         <Header />
         <Body />
-        <Footer />
       </div>
     );
   }

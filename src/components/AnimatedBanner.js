@@ -10,7 +10,7 @@ import Icon6 from '../media/logo/Icon6.svg';
 import RGBSlitFilter from '../utils/RGBSlitFilter';
 
 
-export default class AnimatedBackground extends Component {
+export default class AnimatedBanner extends Component {
 	// Interval between icon changes
 	changeIconInterval = 90;
 
@@ -180,7 +180,7 @@ export default class AnimatedBackground extends Component {
 			pointerEvents: 'none',
 		};
 		return (
-			<div id="AnimatedBackground" ref="canvasBg" style={style}>
+			<div id="AnimatedBanner" ref="canvasBg" style={style}>
 			</div>
 		);
 	}
