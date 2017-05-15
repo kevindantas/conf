@@ -9,14 +9,19 @@ import Icon5 from '../media/logo/Icon5.svg';
 import Icon6 from '../media/logo/Icon6.svg';
 import RGBSlitFilter from '../utils/RGBSlitFilter';
 
-
+/**
+ * Animated banner using PIXI.js
+ */
 export default class AnimatedBanner extends Component {
 	// Interval between icon changes
 	changeIconInterval = 90;
 
+	// Create VH units to use calculate icon's Y position
+	iconY = window.innerWidth / 100 * 10;
+	
 	state = {
 		step: 0,
-		// TODO: Give some time to load the textures
+		// TODO: Im Give some time to load the textures
 		timer: this.changeIconInterval - 10,
 	}
 
@@ -40,16 +45,27 @@ export default class AnimatedBanner extends Component {
 		this.stage.width = window.innerWidth;
 		this.stage.height = window.innerHeight;
 		// FIll background with pattern 
-		this.stage.addChild(this.drawDotGrid(35, 0.3));
-		this.stage.addChild(this.drawDotGrid(15, 0.15));
-		this.stage.addChild(this.drawDotGrid(10, 0.1));
+		this.gridLayer1 = this.stage.addChild(this.drawDotGrid(35, 0.3));
+		this.gridLayer2 = this.stage.addChild(this.drawDotGrid(15, 0.15));
+		this.gridLayer3 = this.stage.addChild(this.drawDotGrid(10, 0.1));
 		
 		this.animate();
+
+		// TODO: Cool interactions
+		this.renderer.view.addEventListener('mousemove', (e) => {
+			this.gridLayer1.position.x = e.x - window.innerWidth / 2;
+			this.gridLayer2.position.x = e.x * 2 - window.innerWidth / 2;
+			this.gridLayer3.position.x = e.x * 3 - window.innerWidth / 2;
+
+			this.gridLayer1.position.y = e.y - window.innerHeight / 2;
+			this.gridLayer2.position.y = e.y * 2 - window.innerHeight / 2;
+			this.gridLayer3.position.y = e.y * 3 - window.innerHeight / 2;
+		});
 	}
 
 
 	/**
-	 * Fill canvas background with the global color
+	 * Function called per frame, handle timer and icons
 	 */
 	animate() {
 		const { changeIconInterval } = this;
@@ -58,18 +74,20 @@ export default class AnimatedBanner extends Component {
 			// Animating 7 frames before the changeIconInterval
 			if(state.timer > changeIconInterval - 7 && state.timer < changeIconInterval - 1) {
 				let x = (window.innerWidth / 2) - (this.icon.width / 2);
-				let y = 90;
-				this.glitchElement(this.icon, x, y);
+				this.glitchElement(this.icon, x, this.iconY);
 			}
 
-			// Wait for ~180 seconds
+			/**
+			 *  Wait for ~90 milliseconds 
+			 * @see changeIconInterval
+			 */
 			if(state.timer % changeIconInterval === 0) {
-				let step = (state.step + 1) % 6;
+				let step = (state.step + 1) % this.icons.length;
 
 				// Draw the logo icon
 				this.drawIcon();
 
-				// Update the step and update the timer
+				// Update the step and reset timer
 				return {
 					timer: 1,
 					step,
@@ -91,16 +109,16 @@ export default class AnimatedBanner extends Component {
 	drawIcon() {
 		// Icon position
 		const x = (window.innerWidth / 2) - (this.icon.width / 2);
-		const y = window.innerWidth / 100 * 10; // Create VH units
 
 		this.icon.position.x = x;
-		this.icon.position.y = y;
+		this.icon.position.y = this.iconY;
 
 		// Swap texture
 		this.icon.texture = this.icons[this.state.step];
 		// Remove all glitches filters from the icon
 		this.icon.filters = null;
 
+		// TODO: Don't need to addChild every time, just change the texture
 		this.stage.addChild(this.icon);
 	}
 
@@ -136,13 +154,13 @@ export default class AnimatedBanner extends Component {
 	drawDotGrid(dotDistance = 35, opacity = 0.2, color = 0xffffff) {
 		const width = window.innerWidth;
 		const height = window.innerHeight;
-		let dotsX = Math.floor(width / dotDistance);
-		let dotsY = Math.floor(height / dotDistance);
+		const dotsX = Math.floor(width / dotDistance);
+		const dotsY = Math.floor(height / dotDistance);
 
 		const graphics = new PIXI.Graphics();
 		for (let i = 0; i < dotsX; i++) {
 			for (let j = 0; j < dotsY; j++) {
-				var circle = this.drawCircle(graphics, dotDistance * i, dotDistance * j, 1, color, opacity)
+				var circle = this.drawCircle(graphics, dotDistance * i, dotDistance * j, 1, color, opacity);
 			}
 		}
 
@@ -163,7 +181,7 @@ export default class AnimatedBanner extends Component {
 	 */
 	drawCircle(graphics, x, y, radius = 1, color = 0xffffff, opacity = 0.3) {
 		graphics.beginFill(color, opacity);
-		graphics.drawCircle(x, y, radius)
+		graphics.drawCircle(x, y, radius);
 		return graphics;
 	}
 
@@ -171,13 +189,12 @@ export default class AnimatedBanner extends Component {
 	render() {
 		const style = {
 			width: '100%',
-			height: '100%',
+			height: '81vh',
 			background: '#000',
-			position: 'fixed',
+			position: 'absolute',
 			top: 0,
 			left: 0,
-			zIndex: -1,
-			pointerEvents: 'none',
+			overflow: 'hidden',
 		};
 		return (
 			<div id="AnimatedBanner" ref="canvasBg" style={style}>

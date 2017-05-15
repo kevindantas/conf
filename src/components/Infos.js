@@ -9,6 +9,7 @@ const styles = {
   container: css({
     alignSelf: 'flex-end',
     display: 'flex',
+    zIndex: 1,
     '@media(max-width: 720px)': {
       alignSelf: 'flex-end',
       display:'block',
