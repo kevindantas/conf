@@ -26,6 +26,9 @@ export default class AnimatedBanner extends Component {
 	}
 
 
+	noiseRects = [];
+
+
 	componentDidMount() {
 		const { canvasBg } = this.refs;
 		this.renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
@@ -44,6 +47,8 @@ export default class AnimatedBanner extends Component {
 		this.stage = new PIXI.Container();
 		this.stage.width = window.innerWidth;
 		this.stage.height = window.innerHeight;
+
+		
 		// FIll background with pattern 
 		this.gridLayer1 = this.stage.addChild(this.drawDotGrid(35, 0.3));
 		this.gridLayer2 = this.stage.addChild(this.drawDotGrid(15, 0.15));
@@ -72,9 +77,20 @@ export default class AnimatedBanner extends Component {
 		this.setState((state) => {
 			// Glitch before change the logo icon
 			// Animating 7 frames before the changeIconInterval
-			if(state.timer > changeIconInterval - 7 && state.timer < changeIconInterval - 1) {
+			if(state.timer > changeIconInterval - 20 && state.timer % 3 == 0) {
 				let x = (window.innerWidth / 2) - (this.icon.width / 2);
 				this.glitchElement(this.icon, x, this.iconY);
+			} 
+
+			if(state.timer > changeIconInterval - 20 && state.timer % 2 == 0) {
+				this.drawNoiseRect();
+			}
+			
+			if(this.noiseRects.length > 0 && state.timer < changeIconInterval - 20) {
+				this.noiseRects = this.noiseRects.filter((rect) => {
+					rect.destroy();
+					return false;
+				});
 			}
 
 			/**
@@ -121,7 +137,19 @@ export default class AnimatedBanner extends Component {
 		// TODO: Don't need to addChild every time, just change the texture
 		this.stage.addChild(this.icon);
 	}
+	
+	drawNoiseRect() {
+		const rect = new PIXI.Graphics();
+		rect.filters = [new PIXI.filters.NoiseFilter()];
+		const x = Math.floor(Math.random() * window.innerWidth);
+		const y = Math.floor(Math.random() * window.innerHeight);
+		const width = Math.floor(Math.random() * 700);
+		const height = Math.floor(Math.random() * (width / 3));
+		rect.drawRect(x, y, width, height);
 
+		this.stage.addChild(rect);
+		this.noiseRects = this.noiseRects.concat(rect);
+	}
 
 	/**
 	 * Glitch a element
